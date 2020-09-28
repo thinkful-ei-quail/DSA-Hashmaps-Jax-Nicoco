@@ -48,18 +48,49 @@ const HashMap = require('./HashMap');
 // console.log(17%9) //8
 // console.log(10%9) //1
 
-function deleteDuplicateChars(str) {
-    const chars = new HashMap();
-    let newString = '';
-    for (let i = 0; i < str.length; i++) {
+// function deleteDuplicateChars(str) {
+//     const chars = new HashMap();
+//     let newString = '';
+//     for (let i = 0; i < str.length; i++) {
+//         try {
+//             chars.get(str[i]);
+//         } catch (e) {
+//             newString += str[i];
+//             chars.set(str[i], true);
+//         }
+//     }
+//     return newString;
+// }
+
+// console.log(deleteDuplicateChars('google'));
+
+
+//5. Any permutation a palindrome
+function palindrome(str) {
+    if(str.length < 2) {
+        return false
+    }
+    let pal = new HashMap()
+    for(let i = 0; i < str.length; i++) {
         try {
-            chars.get(str[i]);
+            pal.delete(str[i])
         } catch (e) {
-            newString += str[i];
-            chars.set(str[i], true);
+            pal.set(str[i])
         }
     }
-    return newString;
+    if(pal.length <=1) {
+        return true
+    } else {
+        return false
+    }
 }
+console.log(palindrome('racecar'))
+console.log(palindrome('moon'))
+console.log(palindrome('acecarr'))
 
-console.log(deleteDuplicateChars('google'));
+// 6. Anagram grouping
+
+function anagram(arr) {
+    let anagramMap = new HashMap()
+    
+}
