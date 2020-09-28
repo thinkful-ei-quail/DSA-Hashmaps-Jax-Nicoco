@@ -1,5 +1,5 @@
 class HashMap {
-  constructor(initialCapacity = 8) {
+  constructor(initialCapacity = 11) {
     this.length = 0;
     this._hashTable = [];
     this._capacity = initialCapacity;
@@ -75,3 +75,5 @@ class HashMap {
     return hash >>> 0;
   }
 }
+
+module.exports = HashMap
